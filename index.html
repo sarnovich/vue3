@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+     <ul>
+         <li v-for="fruta in frutasConId" v-bind:key="fruta">{{fruta.nombre}} - {{fruta.id}}</li>
+     </ul>
+     <hr>
+     <hr>
+     <select v-model="frutaId"> <!-- Establece el valor por defecto--> 
+         <option v-for="fruta in frutasConId" v-bind:value="fruta.id">{{fruta.nombre}}</option>
+     </select>
+     <hr>
+     <hr>
+     
+     <hr>
+
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+//tenemos data, methods, props, mounted, created, computed, watch, destroyed etc.
+//v-for
+        const app ={
+            data() {
+                return {
+                    frutaId: 2,
+                 frutas: ['Manzana', 'Pera', 'Naranja'],
+                 frutasConId: [ {
+                     id: 1,
+                     nombre: "Manzana"
+                 },
+                {
+                    id: 2,
+                    nombre: "pera"
+                },
+                {
+                    id: 3,
+                    nombre: "Naranja"        
+                },
+            ]
+
+                    
+                }
+            }
+           
+            
+            }
+        
+        
+        var mounterApp = Vue.createApp(app).mount('#app')
+
+    </script>
+</body>
+</html>
