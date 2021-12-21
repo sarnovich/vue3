@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <label >Escribe un texto a cambiar</label>
+     <hr>
+    <input type="text" v-model="nombre">
+     <hr>
+     <h3>el texto es {{nombre}}</h3>
+     <hr>
+     <hr>
+     <select v-model = "lista">
+         <option value ="Item 1">Item numero 1</option>
+         <option value ="Item 2">Item numero 2</option>
+         <option value ="Item 3">Item numero 3</option>
+     </select>
+<hr>
+
+     Se selecciono: {{lista}} ||->(TRAE EL VALUE si es que existe, si no trae el texto)
+
+     <hr><br><input type="checkbox" v-model = "activo">
+
+
+{{activo}}
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+//tenemos data, methods, props, mounted, created, computed, watch, destroyed etc.
+//v-model // enlace bidireccional
+        const holaMundo ={
+            data() {
+                return {
+                  nombre: '',
+                  lista: '', //puedo poner un valor por defecto o solo en blanco con ''
+                  activo: false
+
+                    
+                }
+            },
+           
+            
+            }
+        
+        
+        var mounterApp = Vue.createApp(holaMundo).mount('#app')
+
+    </script>
+</body>
+</html>
