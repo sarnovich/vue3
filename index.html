@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+              
+</head>
+<body>
+    <div id="app">
+        <button class="btn indigo darken-4" @click="(contador++)">hace click</button>
+        <button class="btn indigo darken-4" @mouseover="(contador++)">pasa el mousek</button>
+        {{contador}}
+   
+     <hr>
+     <button class="btn indigo darken-4" @click="(boleano = !boleano)">{{boleano}}</button>
+     <h1 v-show="boleano">ESTA EN TRUE</h1>
+     <select v-on:change="cambiarImage($event)" class="browser-default">
+         <option value="1.png">1</option>
+         <option value="2.png">2</option>
+     </select>
+     <img v-bind:src="image">
+    
+
+     <hr>
+     <hr>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+//v-if
+        const app ={
+            data() {
+                return {                                                                                                                                                                                                                                                                                                                                                                
+                  contador:0,
+                  boleano: false,
+                  image: ''                                        
+                }
+            },
+            methods: {
+                cambiarImage(event) {
+                    this.image = event.target.value
+                }
+            }
+          
+          
+        }
+        
+        var mounterApp = Vue.createApp(app).mount('#app')
+
+    </script>
+</body>
+</html>
