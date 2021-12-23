@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+       
+     
+
+</head>
+<body>
+    <div id="app">
+           
+     <hr>
+    <div class="container" style="padding-top: 40px;">
+    <input type="text" v-model="n1">
+    <input type="text" v-model="n2">
+    <h4>el resultado es {{resultado}}</h4>
+    </div>
+     <hr>
+     
+     <hr>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+//v-if
+        const app ={
+            data() {
+                return {   
+                    n1: 0,
+                    n2: 0
+                   
+                }
+            },
+            computed: {
+                resultado: function() {
+                    return parseFloat( this.n1) + parseFloat(this.n2)
+                }
+            }
+        }
+        
+        var mounterApp = Vue.createApp(app).mount('#app')
+
+    </script>
+</body>
+</html>
