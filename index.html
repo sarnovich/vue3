@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- Compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+      <!-- Compiled and minified JavaScript -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+              
+</head>
+<body>
+    <div id="app">
+        <input type="text" :disabled="txtDisabled">
+     <hr>
+     <form>
+         <input type="text" :required="requerido">
+         <button type="submit">Send</button>
+     </form>
+     <hr>
+     <select class="browser-default">
+         <option v-for="fruta in frutas" v-bind:value="fruta.id"
+         :selected="fruta.selected">{{fruta.id}} - {{fruta.nombre}}</option>
+     </select> 
+     <hr>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script>
+//v-if
+        const app ={
+            data() {
+                return {   
+                    txtDisabled: false,
+                    requerido: true,
+                    frutas: [
+                        {
+                            id: 1,
+                            nombre: "Pera",
+                            selected: false
+                        },
+                        {
+                            id: 2,
+                            nombre: "Manzana",
+                            selected: true
+                        },
+                        {
+                            id: 5,
+                            nombre: "Uva",
+                            selected: false
+                        },
+                    ]
+
+
+                }
+            }
+        }
+        
+        var mounterApp = Vue.createApp(app).mount('#app')
+
+    </script>
+</body>
+</html>
